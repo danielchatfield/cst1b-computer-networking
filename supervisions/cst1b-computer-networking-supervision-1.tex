@@ -1,9 +1,9 @@
 \documentclass{supervision}
 \usepackage{computer_networking}
 
-\begin{document}
+\Supervision{1}
 
-\maketitle
+\begin{document}
 
 \section*{Topic 01 - Introduction / Foundation}
 
@@ -162,7 +162,9 @@
       
       \begin{subparts}
         \subpart
-        Assuming no problems in transmission along the way, at whattime does the last bit of the file arrive at the last node (thedestination)?
+        Assuming no problems in transmission along the way, at what
+time does the last bit of the file arrive at the last node (the
+destination)?
         
         \begin{solution}
         It takes $L+\frac{R}{B}$ to transmit the circuit reservation packet through each of the $n$ links as each node has to process the packet first and thus transmission of the packet onto the next link stalls until the last bit of the packet has been received by the node.
@@ -184,7 +186,8 @@
       \begin{subparts}
         \SetQuestionNumber{2}
         \subpart
-        Assuming no packet drops or other errors, at what time doesthe last bit of the file arrive at the destination?
+        Assuming no packet drops or other errors, at what time does
+the last bit of the file arrive at the destination?
         
         \begin{solution}
         The first packet is subject to both the regular link latency and also additional latency caused by the fact that all the nodes (except the last) have to store the packet before they can transmit it ($nL + \frac{(n-1)D}{B}$).
@@ -198,11 +201,13 @@
 
       \end{subparts}
       In the following questions, we refer to cases where some quantities are big. By that we mean consider the limit where that quantity becomes infinitely large or infinitesimally small. Note that some quantities are linked (i.e., if the payload $P$ gets smaller, the number of packets $Q$ must get larger to keep $Q \times P = F$). For each question, the answer could be either: circuit-switched is faster, or packet-switched is faster.
-            Even if you didn’t get the formulae above completely correct, you should understand how these perform relative to each other in the limit. Use this as a way to check your answers for the two previous questions.
+      
+      Even if you didn’t get the formulae above completely correct, you should understand how these perform relative to each other in the limit. Use this as a way to check your answers for the two previous questions.
       \begin{subparts}
         \SetQuestionNumber{3}
         \subpart
-        If the file size $F$ is very large, which is faster? (Assume thatthe header size $H$ has not changed.)
+        If the file size $F$ is very large, which is faster? (Assume that
+the header size $H$ has not changed.)
         \begin{solution}
         Circuit switched
         \end{solution}
@@ -210,11 +215,12 @@
         \subpart
         If the payloads become small (but the header size remains constant), which is faster?
         \begin{solution}
-        Packet switched
+        Circuit switched
         \end{solution}
 
         \subpart
-        If the bandwidth $B$ is very large, which is faster? And bywhat ratio (in the limit)?
+        If the bandwidth $B$ is very large, which is faster? And by
+what ratio (in the limit)?
         \begin{solution}
         Packet switched (3 times as fast).
         \end{solution}
