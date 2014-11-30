@@ -18,12 +18,33 @@
             “We reject kings, presidents and voting. We believe in rough consensus and running code.”
             \end{quote}
             This suggests an approach which is open, dynamic and led by implementation. By contrast, other standards bodies such as the ITU are closed, slow-moving and led by specification. Using examples, discuss ways in which the IETF’s approach has enabled innovation in the Internet, and ways in which it has caused problems.
+            \begin{solution}
+            The open approach means that anyone can get involved which prevents a few large companies from controlling it, as a result though you may get several competing standards.
+            
+            Dynamic is good as it means the internet moves with the times and as platforms improve or change the web can adapt with them (e.g. mobile internet, improved security). The cost of this is that some standards will become deprecated quickly and that you may have to support several standards to ensure compatibility (e.g. could not originally connect to a server with an SSL certificate that used Server Name Indication from python 2 or Windows XP and thus websites were reluctant to switch over).
+            
+            Implementation led can cause some problems in that the implementation may have bugs (if it is the reference implementation then is that now the expected behaviour?) it may prove difficult to reimplement it accurately and the implementation may not be very tolerant of other buggy implementations and behave erratically in the presence of them (great insight into issues with large scale ipv6 deployment here: \url{http://blog.bimajority.org/2014/09/05/the-network-nightmare-that-ate-my-week/}.)
+            \end{solution}
+
             \part
             Prior to the Internet, wide-area networks were joined together at level of application protocols, using gateways. Explain, as fully as you can, why this approach limited application development.
+            \begin{solution}
+            Wouldn't be able to change an application without changing the gateways, this increases the barrier to entry for application development and the ease with which updates can be rolled out.
+            
+            \emph{Not sure what else to say}
+            \end{solution}
+
             \part
             Explain how the design of the Internet protocol, i.e. IP, addressed this problem of application development. You should explain how the term “hourglass model” describes IP’s approach to network layering.
+            \begin{solution}
+            IP solved this by having a common protocol for all networks that worked independently of the data that it was transporting. This is just one layer in the ``hourglass model'', so called because the internet can be thought of as several layers each of which has different protocols/mediums apart from the waist (middle of the hourglass) which is just IP. For example for the physical layer it can travel over copper, fibre, or radio waves. For the data link it can be $802.11$ or ethernet etc.
+            \end{solution}
+
             \part
             The design of IP makes explicit provision for fragmentation, i.e. the ability to split an individual packet into pieces during its journey across the network. By considering the hourglass model, suggest why this feature is essential.
+            \begin{solution}
+            IP works over a range of data links and thus if a data link has a smaller MTU (maximum transmission unit) then fragmentation is required otherwise the IP packet size would have to be at least as small as the smallest MTU which would make it very inefficient over connections with larger MTUs.
+            \end{solution}
 
         \end{parts}
 
@@ -31,14 +52,26 @@
         \begin{parts}
             \part
             What is the difference between an architectural principle and an architectural design (choice)? What other examples can you think of?
+            \begin{solution}
+            An architectural principle may be something like the principle of modularity where as an architectural design is an actual implementation (e.g. IP works independent of the data that is contained within the packets).
+            \end{solution}
+
             \part
             A NAT stores state about the flows (connections) that pass through it.
             \begin{subparts}
                 \subpart
                 Why does a NAT break the \emph{end-to-end} principle?
+                \begin{solution}
+                Because a NAT means that the data is no longer going end-to-end as it requires the NAT to translate the address for it to reach its destination.
+                \end{solution}
+
                 \subpart
                 Why might the NAT violation of \emph{end-to-end} principles not
                 actually matter?
+                \begin{solution}
+                You can think of the NAT as being part of the end system (as there is only going to be one at each end) as it can only affect the traffic flowing through it (the traffic for that one private network).
+                \end{solution}
+
             \end{subparts}
         \end{parts}
 
