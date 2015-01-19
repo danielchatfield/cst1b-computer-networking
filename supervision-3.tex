@@ -1,0 +1,107 @@
+\documentclass{supervision}
+\usepackage{course}
+\Supervision{3}
+
+\begin{document}
+  \begin{questions}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section*{Topic 03 - Data-Link (Physical)}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \SetQuestionNumber{7}
+    \question \textit{Shared media multiplexing in local area networks}
+    \begin{parts}
+      \part Define the term \textit{shared media network}
+
+      \part Explain how Ethernet performs \textit{carrier sense},
+      \textit{collision detection}, how it aims to minimise the
+      probability of collision on retransmission and how this is adapted
+      to handle varying load.
+
+      \part Explain why token ting does not share media at the physical
+      level, but is still analyzed as a shared media system.
+
+      \part What is the role of a token monitor in token ring? Why does the
+      monitor \textit{not} prevent failure when one of the nodes in the
+      ring suffers a hardware failure? Suggest how a token ring system
+      might be designed to handle failure of a computer attached to the
+      ring.
+
+      \part Explain the meaning of \textit{destination delete} and
+      \textit{source delete} as used in ring-based networks.
+
+      \part Explain the difference between conventional token rings and
+      \textit{slotted rings}. What are the advantages of a slotted ring?
+    \end{parts}
+
+    \question \textit{Multiplexing redux}
+    \begin{parts}
+      \part Several real-time video streams are to share the same
+      lower-layer channel.
+      \begin{subparts}
+        \subpart Give one example of a lower-layer channel in which the
+        flows might be scheduled, and one in which scheduling is not
+        possible.
+
+        \subpart A lecturer remarks that “centralised multiplexing”
+        offers potential gains in efficiency over non-centralised
+        multiplexing. Give two reasons why this can improve efficiency.
+        What, in general terms, is the “centralised” facility necessary
+        for these gains to be possible?
+
+        \subpart Using an example, describe why specifying a scheduling
+        policy in terms of priority may cause problems, even where it
+        is safe to use priority within the scheduling mechanism.
+        [Hint: consider CPU scheduling in an operating system.]
+      \end{subparts}
+
+      \part Code-division multiple access (CDMA) is a code-division
+      multiplexing system, used for mobile telephony.
+      \begin{subparts}
+        \subpart What is a code? What property of codes causes them to be
+        “nearly orthogonal” to each other?
+
+        \subpart Two transmitters, A and B, both want to transmit a
+        four-bit message at the same time using CDMA. Transmitter A has
+        code 10010111 and message 1001. Transmitter B has code 00111101
+        and message 0011. Write down the bit sequences transmitted by A
+        and B. Write down the bit sequence seen by a receiver, stating
+        any assumption you make. Show that the original messages of
+        both A and B may be recovered. [Each bit is transmitted as the
+        exclusive OR of the code sequence with the bit value.]
+      \end{subparts}
+    \end{parts}
+
+    \question \textit{Coding, digitisation, error detection and error
+    correction}
+    \begin{parts}
+      \part Give, with examples, three advantages of digitising audio, and
+      three corresponding disadvantages. (Compare with storing and
+      processing it exclusively on analogue media and equipment.)
+
+      \part Explain quantisation and sampling of analogue signals, and the
+      distinction between these. State an upper bound for the
+      signal-to-noise ratio of a signal quantised at $b$ bits resolution,
+      assuming the analogue original to be noiseless and the quantisation
+      process completely accurate.
+
+      \part Outline encode and decode procedures for a simple ($m$,$k$)
+      block code. Show that the minimum distance of any simple checksum
+      code is always $2$.
+    \end{parts}
+
+    \question \textit{CRCs}
+    \begin{parts}
+      \part Explain, giving an example, how to write a binary message (i.e.
+      a sequence of binary digits) as a polynomial.
+
+      \part Outline send and receive procedures for CRC-based message
+      coding and error detection. What information must be agreed in
+      advance by the sender and reciever?
+
+      \part Draw a shift register which will compute the remainder on
+      division of an input polynomial by the CRC-8 polynomial
+      $x^8 + x^2 + x^1 +1$.
+
+    \end{parts}
+  \end{questions}
+\end{document}
